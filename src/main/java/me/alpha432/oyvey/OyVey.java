@@ -11,7 +11,8 @@ import org.apache.logging.log4j.Logger;
 public class OyVey implements ModInitializer, ClientModInitializer {
     public static float TIMER = 1f;
 
-    public static final Logger LOGGER = LogManager.getLogger("OyVey");
+    public static final Logger LOGGER = LogManager.getLogger("Grave Client");
+
     public static ServerManager serverManager;
     public static ColorManager colorManager;
     public static RotationManager rotationManager;
@@ -26,8 +27,12 @@ public class OyVey implements ModInitializer, ClientModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("Pre-initializing {} v{}",
-                BuildConfig.NAME, BuildConfig.VERSION);
+        LOGGER.info(
+            "Pre-initializing {} v{}",
+            BuildConfig.NAME,
+            BuildConfig.VERSION
+        );
+
         configManager = new ConfigManager();
         eventManager = new EventManager();
         serverManager = new ServerManager();
@@ -56,11 +61,17 @@ public class OyVey implements ModInitializer, ClientModInitializer {
 
         configManager.load();
         colorManager.init();
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> configManager.save()));
+
+        Runtime.getRuntime().addShutdownHook(
+            new Thread(() -> configManager.save())
+        );
 
         long endTime = System.nanoTime();
 
-        LOGGER.info("Initialized {} in {}ms",
-                BuildConfig.NAME, (endTime - startTime) / 1000000.0);
+        LOGGER.info(
+            "Initialized {} in {}ms",
+            BuildConfig.NAME,
+            (endTime - startTime) / 1_000_000.0
+        );
     }
 }
