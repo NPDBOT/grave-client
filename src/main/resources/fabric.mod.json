@@ -1,16 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "oyvey",
+  "id": "grave-client",
   "version": "${version}",
-  "name": "oyvey-ported",
-  "description": "free and opensource client base",
+  "name": "Grave Client",
+  "description": "Grave Client for Minecraft",
   "authors": [
-    "3arthqu4ke",
-    "alpha432",
-    "cattyn"
+    "nextpartydoor"
   ],
   "contact": {
-    "repo": "https://github.com/mioclient/oyvey-ported"
+    "homepage": "https://discord.gg/kJmpXcWvmF"
   },
   "license": "MIT",
   "environment": "client",
